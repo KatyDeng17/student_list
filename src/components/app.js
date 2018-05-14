@@ -8,7 +8,7 @@ import List from './list';
 
 const App = ()=>(
     <div className = "container">
-        <h1 className = 'center'> To do List </h1>
+        <h1 className = 'center'> Student List </h1>
         {/* calling the List (list.js) component here */}
         <List />
     </div>

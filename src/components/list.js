@@ -6,20 +6,24 @@ import dummyData from '../dummy_data/dummy_list_data';
 //to desplay dummyData from  the dummy_list_data.js step 2)
 const List = (props)=>{
   console.log('dummy data from dummy_data folder: ', dummyData)
-  console.log('dummy data from dummy_data folder: ', dummyData[0].title);
+
+//dynamically display all the dummy data to the webpage; dummyData is equail to the array name; .map(itemInArray, indesOfArray); .map is a for loop *** key is a prop of the component; Key have to be unique 
+//Keys help React identify which items have changed, are added, or are removed. Keys should be given to the elements inside the array to give the elements a stable identity:
   const list_element = dummyData.map((item, index)=>{
     return (
-        <li key = {index}>
-           {item.name}
-        </li>  
+        <div className ="center"  key = {item.id}>
+        
+           <span>{item.name}</span> 
+           <span>{item.course}</span>
+           <span>{item.id}</span>
+        </div>  
     )
   })
   return (
     <div> 
-      <ul>
+    
           {/* showing the data from listData */}
-          <h3>{list_element}</h3> 
-       </ul>
+         {list_element}
      </div>
   )
 }
